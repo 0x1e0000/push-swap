@@ -6,7 +6,7 @@
 /*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 02:36:59 by mait-si-          #+#    #+#             */
-/*   Updated: 2019/10/25 02:37:00 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/25 21:54:01 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	whitespace(char c)
 	return (0);
 }
 
-int			ft_atoi(const char *str)
+int			ft_atoi(const char *str, int *is_number)
 {
 	int				i;
 	int				negativity;
@@ -36,11 +36,13 @@ int			ft_atoi(const char *str)
 		negativity = -1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] >= 48 && str[i] <= 57)
+	while (ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
+	if (!ft_isdigit(str[i]))
+		is_number = 0;
 	if (result > 2147483647 && negativity == 1)
 		return (-1);
 	if (result > 2147483648 && negativity == -1)
