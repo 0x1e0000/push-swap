@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/05/29 15:11:36 by mait-si-         ###   ########.fr       */
+/*   Created: 2021/05/29 12:21:46 by mait-si-          #+#    #+#             */
+/*   Updated: 2021/05/29 12:51:09 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
-int main(int argc, char *argv[])
+void	sa(t_list **stack)
 {
-	t_list *a;
-	t_list *b;
+	int	tmp;
 
-	a = NULL;
-	b = NULL;
-	// Check Arguments
-	if (argc > 1 && argv && !fill_and_check(argv, &a))
-		return (0);
-	print_stack(a);
-	printf("------------\n");
-	sa(&a);
-	print_stack(a);
-	return (0);
+	if (!*stack || !(*stack)->next)
+		return ;
+	tmp = (*stack)->content;
+	(*stack)->content = (*stack)->next->content;
+	(*stack)->next->content = tmp;
 }

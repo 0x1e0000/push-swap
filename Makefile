@@ -1,7 +1,7 @@
 MakeDir = make
 compile = gcc -Wall -Werror -Wextra
 NAME = push_swap
-src = *.c
+src = main.c src/*.c src/operations/*.c
 headers = -Ilibft/libft.h
 libs = libft/libft.a
 

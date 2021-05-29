@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:57:52 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/28 00:26:29 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/05/29 12:01:50 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct	s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }				t_list;
 
@@ -74,7 +74,7 @@ void			ft_putchar(unsigned char c);
 void			ft_putendl(char *str);
 void			ft_putnbr(int nb);
 
-t_list			*ft_lstnew(void *content);
+t_list			*ft_lstnew(int content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
