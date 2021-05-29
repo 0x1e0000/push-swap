@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:57:52 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/25 21:51:09 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/28 00:26:29 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_atoi(const char *str, int *is_number);
+unsigned long	ft_atoi(const char *str, int *is_number);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int c);

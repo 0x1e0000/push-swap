@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 02:36:59 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/25 21:54:01 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/28 00:26:16 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	whitespace(char c)
+static int whitespace(char c)
 {
 	if (c == '\n' || c == '\v' || c == '\f' || c == '\t' || c == '\r')
 		return (1);
@@ -21,11 +21,11 @@ static int	whitespace(char c)
 	return (0);
 }
 
-int			ft_atoi(const char *str, int *is_number)
+unsigned long ft_atoi(const char *str, int *is_number)
 {
-	int				i;
-	int				negativity;
-	unsigned long	result;
+	int i;
+	int negativity;
+	unsigned long result;
 
 	result = 0;
 	negativity = 1;
@@ -41,11 +41,7 @@ int			ft_atoi(const char *str, int *is_number)
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
-	if (!ft_isdigit(str[i]))
-		is_number = 0;
-	if (result > 2147483647 && negativity == 1)
-		return (-1);
-	if (result > 2147483648 && negativity == -1)
-		return (0);
+	if (!ft_isdigit(str[i]) && str[i] != '\0')
+		*is_number = 1;
 	return (result * negativity);
 }
