@@ -6,7 +6,7 @@
 /*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/05/29 15:11:36 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/30 21:29:53 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,17 @@ int main(int argc, char *argv[])
 	// Check Arguments
 	if (argc > 1 && argv && !fill_and_check(argv, &a))
 		return (0);
+	fill_and_check(argv, &b);
 	print_stack(a);
+	// printf("***\n");
+	// print_stack(b);
 	printf("------------\n");
-	sa(&a);
+	// swap(&a);
+	// ss(&a, &b);
+	// push(&a, &b);
+	rotate(&a);
 	print_stack(a);
+	// printf("***\n");
+	// print_stack(b);
 	return (0);
 }
