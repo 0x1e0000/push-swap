@@ -6,7 +6,7 @@
 /*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/05/31 01:05:32 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/05/31 01:21:20 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,22 @@ int main(int argc, char *argv[])
 		return (0);
 	fill_and_check(argv, &b);
 
-
-	print_stack(a);
-	printf("***\n");
-	print_stack(b);
-	printf("------------\n");
+	// print_stack(a);
+	// printf("***\n");
+	// print_stack(b);
+	// printf("------------\n");
 
 
 
 	// swap(&a);
 	// ss(&a, &b);
-	// push(&a, &b);
+	push(&a, &b);
 	// rotate(&a);
 	// rr(&a, &b);
 	// r_rotate(&a);
-	rrr(&a, &b);
+	// rrr(&a, &b);
+
+
 
 	print_stack(a);
 	printf("***\n");

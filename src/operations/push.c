@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 12:22:22 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/30 16:03:17 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/31 01:38:21 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	push(t_list **from, t_list **to)
 {
+	t_list	*tmp;
+
 	if (!*from)
 		return ;
-	(*to)->next = *from;
+	tmp = *from;
+	*from = (*from)->next;
+	tmp->next = *to;
+	*to = tmp;
 }
