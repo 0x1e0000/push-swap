@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 00:02:15 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/05/30 17:49:03 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/31 00:56:55 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 // Operations
 void	swap(t_list **stack);
 void	ss(t_list **stack_a, t_list **stack_b);
-void	push(t_list **stack_a, t_list **stack_b);
+void	push(t_list **from, t_list **to);
 void	rotate(t_list **stack);
-void	rb(t_list **stack);
-void	rr(t_list **stack);
-void	rra(t_list **stack);
-void	rrb(t_list **stack);
-void	rrr(t_list **stack);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	r_rotate(t_list **stack);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 // Sources
 int		fill_and_check(char *argv[], t_list **stack);

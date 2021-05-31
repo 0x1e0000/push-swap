@@ -9,6 +9,7 @@ all: $(NAME)
 
 $(NAME):
 	@$(MakeDir) -C libft/
+	@$(MakeDir) bonus -C libft/
 	@$(compile) $(src) -I $(headers) $(libs) -o $(NAME) -g
 
 bonus: $(NAME)

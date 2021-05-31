@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 12:22:27 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/30 21:51:59 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/05/30 23:50:01 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ void	rotate(t_list **stack)
 		return ;
 	head = (*stack)->next; // seconde node is the head
 	tmp = *stack;
-	tmp->next = NULL;
-	while (tmp)
-		tmp = tmp->next;
-	tmp = *stack;
+	ft_lstlast(tmp)->next = *stack;
+	(*stack)->next = NULL;
 	*stack = head;
+}
+
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
 }
