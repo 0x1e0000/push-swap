@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 02:36:59 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/05/28 00:26:16 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/06 12:51:30 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int whitespace(char c)
+static int	whitespace(char c)
 {
 	if (c == '\n' || c == '\v' || c == '\f' || c == '\t' || c == '\r')
 		return (1);
@@ -21,11 +21,11 @@ static int whitespace(char c)
 	return (0);
 }
 
-unsigned long ft_atoi(const char *str, int *is_number)
+long long	ft_atoi(const char *str, int *is_number)
 {
-	int i;
-	int negativity;
-	unsigned long result;
+	int			i;
+	int			negativity;
+	long long	result;
 
 	result = 0;
 	negativity = 1;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/05/31 01:21:20 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/06 12:50:10 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,10 @@ int main(int argc, char *argv[])
 
 	a = NULL;
 	b = NULL;
-	// Check Arguments
-	if (argc > 1 && argv && !fill_and_check(argv, &a))
+	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
-	fill_and_check(argv, &b);
-
-	// print_stack(a);
-	// printf("***\n");
-	// print_stack(b);
-	// printf("------------\n");
-
-
-
-	// swap(&a);
-	// ss(&a, &b);
-	push(&a, &b);
-	// rotate(&a);
-	// rr(&a, &b);
-	// r_rotate(&a);
-	// rrr(&a, &b);
-
-
-
-	print_stack(a);
-	printf("***\n");
-	print_stack(b);
+	if (is_sorted(a))
+		return (0);
+	// Sort Algorithm HERE
 	return (0);
 }

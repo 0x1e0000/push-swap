@@ -1,24 +1,27 @@
-MakeDir = make
+MakeDir = make bonus
 compile = gcc -Wall -Werror -Wextra
-NAME = push_swap
-src = main.c src/*.c src/operations/*.c
+src =	src/operations/push.c			\
+		src/operations/reverse_rotate.c	\
+		src/operations/rotate.c			\
+		src/operations/swap.c			\
+		src/*.c
 headers = -Ilibft/libft.h
 libs = libft/libft.a
 
-all: $(NAME)
-
-$(NAME):
+all:
 	@$(MakeDir) -C libft/
-	@$(MakeDir) bonus -C libft/
-	@$(compile) $(src) -I $(headers) $(libs) -o $(NAME) -g
+	@$(compile) push_swap.c $(src) -I $(headers) $(libs) -o push_swap -g
 
-bonus: $(NAME)
+bonus:
+	@$(MakeDir) -C libft/
+	@$(compile) checker.c $(src) -I $(headers) $(libs) -o checker -g
 
 clean:
 	@$(MakeDir) clean -C libft/
 
 fclean: clean
 	@$(MakeDir) fclean -C libft/
-	@rm -rf $(NAME)
+	@rm -rf push_swap
+	@rm -rf checker
 
 re: fclean all
