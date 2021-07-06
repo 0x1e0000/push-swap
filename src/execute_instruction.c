@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_instruction.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 10:02:27 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/06 11:29:13 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/06 22:56:57 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ static int	swap_(char *str, t_list **a, t_list **b)
 {
 	if (*str == 'a' && *(str + 1) == '\0')
 	{
-		swap(a);
+		swap(a, NULL);
 		return (1);
 	}
 	else if (*str == 'b' && *(str + 1) == '\0')
 	{
-		swap(b);
+		swap(b, NULL);
 		return (1);
 	}
 	else if (*str == 's' && *(str + 1) == '\0')
 	{
-		ss(a, b);
+		ss(a, b, NULL);
 		return (1);
 	}
 	error_();
@@ -37,12 +37,12 @@ static int	push_(char *str, t_list **a, t_list **b)
 {
 	if (*str == 'a' && *(str + 1) == '\0')
 	{
-		push(b, a);
+		push(b, a, NULL);
 		return (1);
 	}
 	else if (*str == 'b' && *(str + 1) == '\0')
 	{
-		push(a, b);
+		push(a, b, NULL);
 		return (1);
 	}
 	error_();
@@ -53,17 +53,17 @@ static int	rotate_(char *str, t_list **a, t_list **b)
 {
 	if (*str == 'a' && *(str + 1) == '\0')
 	{
-		rotate(a);
+		rotate(a, NULL);
 		return (1);
 	}
 	else if (*str == 'b' && *(str + 1) == '\0')
 	{
-		rotate(b);
+		rotate(b, NULL);
 		return (1);
 	}
 	else if (*str == 'r' && *(str + 1) == '\0')
 	{
-		rr(a, b);
+		rr(a, b, NULL);
 		return (1);
 	}
 	error_();
@@ -74,17 +74,17 @@ static int	r_rotate_(char *str, t_list **a, t_list **b)
 {
 	if (*str == 'a' && *(str + 1) == '\0')
 	{
-		r_rotate(a);
+		r_rotate(a, NULL);
 		return (1);
 	}
 	else if (*str == 'b' && *(str + 1) == '\0')
 	{
-		r_rotate(b);
+		r_rotate(b, NULL);
 		return (1);
 	}
 	else if (*str == 'r' && *(str + 1) == '\0')
 	{
-		rrr(a, b);
+		rrr(a, b, NULL);
 		return (1);
 	}
 	error_();

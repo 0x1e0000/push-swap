@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   sort_big_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 12:22:22 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/06 22:57:14 by 0x10000          ###   ########.fr       */
+/*   Created: 2021/07/06 20:09:19 by 0x10000           #+#    #+#             */
+/*   Updated: 2021/07/06 22:37:24 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
-void	push(t_list **from, t_list **to, char *print)
+void	radix_sort(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-
-	if (!*from)
-		return ;
-	tmp = *from;
-	*from = (*from)->next;
-	tmp->next = *to;
-	*to = tmp;
-	if (print)
-	{
-		ft_putstr(print);
-		write(1, "\n", 1);
-	}
+	(void)a;
+	(void)b;
+	write(1, "Big\n", 4);
 }

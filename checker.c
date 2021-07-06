@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:50:50 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/06 12:50:52 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:14:42 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char *argv[])
 	{
 		execute_instruction(instruction, &a, &b);
 		free(instruction);
+		visualize(a, b);
 	}
 	free(instruction);
 	if (!is_sorted(a))
