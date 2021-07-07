@@ -6,7 +6,7 @@
 /*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 20:09:20 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/07 13:43:02 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/07 15:38:04 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	sort_3(t_list **a)
 
 void	sort_4(t_list **a, t_list **b, int argc)
 {
-	exclude_min(a, b, argc);
+	exclude_min_max(a, b, argc, 1);
 	sort_3(a);
 	push(b, a, "pa");
 }
 
 void	sort_5(t_list **a, t_list **b, int argc)
 {
-	exclude_min(a, b, argc);
+	exclude_min_max(a, b, argc, 1);
 	sort_4(a, b, argc - 1);
 	push(b, a, "pa");
 }

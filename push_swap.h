@@ -6,7 +6,7 @@
 /*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 00:02:15 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/07 13:41:49 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/07 15:38:04 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	sort_3(t_list **a);
 void	sort_4(t_list **a, t_list **b, int argc);
 void	sort_5(t_list **a, t_list **b, int argc);
 void	radix_sort(t_list **a, t_list **b);
-int		get_min(t_list *stack);
-void	exclude_min(t_list **a, t_list **b, int lenght);
+void	exclude_min_max(t_list **a, t_list **b, int lenght, int i);
 
 // Tmp
 # include <stdio.h>
