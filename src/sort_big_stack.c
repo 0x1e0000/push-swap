@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 20:09:19 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/06 22:37:24 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/07 15:43:57 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	radix_sort(t_list **a, t_list **b)
+void	big_sort(t_list **a, t_list **b)
 {
 	(void)a;
 	(void)b;
