@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 20:09:20 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/07 00:26:55 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/07 12:02:49 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	sort_3(t_list **a)
 {
 	while (!is_sorted(*a))
 	{
-		if ((*a)->next->content > (*a)->next->next->content)
-			r_rotate(a, "rra");
 		if ((*a)->content > (*a)->next->content)
 			swap(a, "sa");
+		if ((*a)->next->content > (*a)->next->next->content)
+			r_rotate(a, "rra");
 	}
 }
 
