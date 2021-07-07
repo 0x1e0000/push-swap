@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 09:34:25 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/07 00:20:05 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/07 13:42:42 by mait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int is_sorted(t_list *stack)
+int	is_sorted(t_list *stack)
 {
 	while (stack)
 	{
@@ -23,10 +23,9 @@ int is_sorted(t_list *stack)
 	return (1);
 }
 
-void error_(void)
+void	error_(void)
 {
 	write(2, "Error\n", 6);
-	// system("leaks checker");
 	exit(1);
 }
 
@@ -46,18 +45,43 @@ int	get_min(t_list *stack)
 	return (min);
 }
 
-int	get_max(t_list *stack)
+int	get_min_index(t_list *a)
 {
-	t_list	*tmp;
-	int		max;
+	int	index;
+	int	min;
 
-	tmp = stack;
-	max = tmp->content;
-	while (tmp)
+	index = 0;
+	min = get_min(a);
+	while (a->content != min)
 	{
-		if (max < tmp->content)
-			max = tmp->content;
-		tmp = tmp->next;
+		index++;
+		a = a->next;
 	}
-	return (max);
+	return (index);
+}
+
+void	exclude_min(t_list **a, t_list **b, int lenght)
+{
+	int	index;
+	int	i;
+
+	i = 0;
+	index = get_min_index(*a);
+	if (index > lenght / 2)
+	{
+		index = lenght - index;
+		i = 2;
+	}
+	if (i != 2)
+	{
+		while (index-- > 0)
+			rotate(a, "ra");
+		push(a, b, "pb");
+	}
+	else
+	{
+		while (index-- > 0)
+			r_rotate(a, "rra");
+		push(a, b, "pb");
+	}
 }
