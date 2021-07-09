@@ -6,7 +6,7 @@
 /*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 20:09:19 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/09 01:23:17 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/09 20:02:33 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ void	split_stack(t_list **a, t_list **b, int argc)
 	while (argc--)
 	{
 		if ((*a)->content == min || (*a)->content == max)
-			rotate(a, "ra");
+			rotate(a, NULL);
 		else
 		{
-			push(a, b, "pb");
+			push(a, b, NULL);
 			if ((*b)->content < middle)
-				rotate(b, "rb");
+				rotate(b, NULL);
 		}
 	}
 	if ((*a)->next && (*a)->content < (*a)->next->content)
-		swap(a, "sa");
+		swap(a, NULL);
 }
 
 int	get_moves(t_list *stack, int nbr)
@@ -66,17 +66,15 @@ int	*get_less_moves(t_list *a, t_list *b)
 	int sum;
 
 	tmp = b;
-	result[0] = tmp->content;
-	result[1] = get_closest_number(a, result[0]);
-	result[2] = get_moves(b, result[0]) + get_moves(a, result[1]) + 1;
-	printf("Number [%d] Closest to [%d] Needs [%d] Moves\n", result[0], result[1], result[2]);
+	result[0] = tmp->content; // first value
+	result[1] = get_closest_number(a, result[0]); // Clossest b Number in stack A
+	result[2] = get_moves(b, result[0]) + get_moves(a, result[1]) + 1; // Total Moves to put b next to clossest number in A
 	tmp = tmp->next;
 	while (tmp)
 	{
 		result[0] = tmp->content;
 		result[1] = get_closest_number(a, result[0]);
 		sum = get_moves(b, result[0]) + get_moves(a, result[1]) + 1;
-		printf("Number [%d] Closest to [%d] Needs [%d] Moves\n", result[0], result[1], sum);
 		if (sum < result[2])
 			result[2] = sum;
 		tmp = tmp->next;
@@ -84,27 +82,31 @@ int	*get_less_moves(t_list *a, t_list *b)
 	return (result);
 }
 
+void	move(int *result, t_list **a, t_list **b)
+{
+	// if (result[2] == 1)
+	// 	push(b, a, NULL);
+	while (result[1] != (*b)->content)
+		rotate(b, NULL);
+	while (result[0] != (*a)->content)
+		rotate(a, NULL);
+	// push(b, a, NULL);
+}
+
 void	big_sort(t_list **a, t_list **b, int argc)
 {
-	// int	*result;
+	int	*result;
 	split_stack(a, b, argc);
 	t_list *tmp;
 
+	result = get_less_moves(*a, *b);
+	printf("Number [%d] Closest to [%d] Needs [%d] Moves\n", result[0], result[1], result[2]);
 	tmp = *b;
-	// result = get_less_moves(*a, *b);
-	push(b, a, "pa");
-	push(b, a, "pa");
-	printf("2  : [%d]\n", get_closest_number(*a, 2));
-	// printf("-5  : [%d]\n", get_closest_number(*a, -5));
-	// printf("-4 : [%d]\n", get_closest_number(*a,  -4));
-	// printf("10 : [%d]\n", get_closest_number(*a, 10));
-	// printf("Number [%d] Closest to [%d] Needs [%d] Moves\n", result[0], result[1], result[2]);
 	// while (tmp)
 	// {
-		// execute_moves(result[0], result[1], a, b);
-		// Tell b gets empty
+	// 	move(result, a, b);
 	// 	tmp = tmp->next;
 	// }
 }
 
-// // printf("[%d] needs %d move to be in top\n", tmp->content, get_moves(tmp->content, *b));
+// printf("[%d] needs %d move to be in top\n", tmp->content, get_moves(tmp->content, *b));

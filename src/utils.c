@@ -6,7 +6,7 @@
 /*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 09:34:25 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/09 00:17:12 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/09 19:29:53 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,24 @@ int	get_closest_number(t_list *stack, int nbr)
 {
 	int		result;
 	int		div;
-	int		tmp;
+	int		is_found;
 
-	result = stack->content;
-	div = nbr - stack->content;
-	// div = div < 0 ? div * -1 : div;
-	stack = stack->next;
+	is_found = 0;
 	while (stack)
 	{
-		tmp = nbr - stack->content;
-		// tmp = tmp < 0 ? tmp * -1 : tmp;
-		printf("tmp[%d] div[%d] content[%d]\n", tmp, div, stack->content);
-		if (tmp < div && nbr < stack->content)
+		if (!is_found && stack->content > nbr) // Will execute once
 		{
+			div = stack->content - nbr;
 			result = stack->content;
-			div = tmp;
+			is_found = 1;
+		}
+		if (is_found && stack->content > nbr)
+		{
+			if (stack->content - nbr < div)
+			{
+				div = stack->content - nbr;
+				result = stack->content;
+			}
 		}
 		stack = stack->next;
 	}
