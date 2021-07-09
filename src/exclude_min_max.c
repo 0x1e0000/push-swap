@@ -63,13 +63,13 @@ int	get_max_index(t_list *a)
 	return (index);
 }
 
-void	exclude_min_max(t_list **a, t_list **b, int lenght, int i)
+void	exclude_min_max(t_list **a, t_list **b, int lenght, int switcher)
 {
 	int	index;
 	int	i;
 
 	i = 0;
-	if (i)
+	if (switcher)
 		index = get_min_index(*a);
 	else
 		index = get_max_index(*a);

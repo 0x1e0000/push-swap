@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/07 15:43:57 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/09 00:29:31 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
 	b = NULL;
 	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
-	if (is_sorted(a))
-		return (0);
+	// if (is_sorted(a))
+	// 	return (0);
 	// Sort Algorithm HERE
 	if (--argc == 2)
 		swap(&a, "sa");
@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
 		sort_4(&a, &b, argc);
 	else if (argc == 5)
 		sort_5(&a, &b, argc);
-	else
-		big_sort(&a, &b);
-	// visualize(a, b);
+	else if (argc <= 500)
+		big_sort(&a, &b, --argc);
+	visualize(a, b);
 	return (0);
 }

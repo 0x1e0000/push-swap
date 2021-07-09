@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mait-si- <mait-si-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 00:02:15 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/07 15:43:57 by mait-si-         ###   ########.fr       */
+/*   Updated: 2021/07/08 23:41:30 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ int		is_sorted(t_list *stack);
 void	sort_3(t_list **a);
 void	sort_4(t_list **a, t_list **b, int argc);
 void	sort_5(t_list **a, t_list **b, int argc);
-void	big_sort(t_list **a, t_list **b);
+void	big_sort(t_list **a, t_list **b, int argc);
 void	exclude_min_max(t_list **a, t_list **b, int lenght, int i);
-
+int		get_min(t_list *stack);
+int		get_max(t_list *stack);
+int		get_middle(t_list *stack, int lenght);
 // Tmp
 # include <stdio.h>
 # define GREEN "\e[1;32m"
