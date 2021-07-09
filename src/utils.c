@@ -53,3 +53,39 @@ int	get_middle(t_list *stack, int lenght)
 	}
 	return (0);
 }
+
+int	get_index(t_list *a, int nbr)
+{
+	int	index;
+
+	index = 0;
+	while (a->content != nbr)
+	{
+		index++;
+		a = a->next;
+	}
+	return (index);
+}
+
+int	get_closest_number(t_list *stack, int nbr)
+{
+	int		result;
+	int		div;
+	int		tmp;
+
+	result = stack->content;
+	div = nbr - stack->content;
+	stack = stack->next;
+	while (stack)
+	{
+		tmp = nbr - stack->content;
+		tmp = tmp < 0 ? tmp * -1 : tmp;
+		if (tmp < div)
+		{
+			result = stack->content;
+			div = tmp;
+		}
+		stack = stack->next;
+	}
+	return (result);
+}

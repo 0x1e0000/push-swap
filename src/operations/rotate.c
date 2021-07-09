@@ -17,7 +17,7 @@ void	rotate(t_list **stack, char *print)
 	t_list *tmp;
 	t_list *head;
 
-	if (!*stack)
+	if (!*stack || !(*stack)->next)
 		return ;
 	head = (*stack)->next; // seconde node is the head
 	tmp = *stack;
