@@ -75,12 +75,14 @@ int	get_closest_number(t_list *stack, int nbr)
 
 	result = stack->content;
 	div = nbr - stack->content;
+	// div = div < 0 ? div * -1 : div;
 	stack = stack->next;
 	while (stack)
 	{
 		tmp = nbr - stack->content;
-		tmp = tmp < 0 ? tmp * -1 : tmp;
-		if (tmp < div)
+		// tmp = tmp < 0 ? tmp * -1 : tmp;
+		printf("tmp[%d] div[%d] content[%d]\n", tmp, div, stack->content);
+		if (tmp < div && nbr < stack->content)
 		{
 			result = stack->content;
 			div = tmp;

@@ -92,10 +92,12 @@ void	big_sort(t_list **a, t_list **b, int argc)
 
 	tmp = *b;
 	// result = get_less_moves(*a, *b);
-	printf("2  : [%d]\n", get_closest_number(*a, 2 ));
-	printf("6  : [%d]\n", get_closest_number(*a, 6 ));
-	printf("69 : [%d]\n", get_closest_number(*a, 69));
-	printf("50 : [%d]\n", get_closest_number(*a, 50));
+	push(b, a, "pa");
+	push(b, a, "pa");
+	printf("2  : [%d]\n", get_closest_number(*a, 2));
+	// printf("-5  : [%d]\n", get_closest_number(*a, -5));
+	// printf("-4 : [%d]\n", get_closest_number(*a,  -4));
+	// printf("10 : [%d]\n", get_closest_number(*a, 10));
 	// printf("Number [%d] Closest to [%d] Needs [%d] Moves\n", result[0], result[1], result[2]);
 	// while (tmp)
 	// {
