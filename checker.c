@@ -33,10 +33,10 @@ int	main(int argc, char *argv[])
 	if (!is_sorted(a))
 	{
 		write(2, RED, 7);
-		write(2, "KO\n", 3);
+		write(2, "KO", 3);
 		return (1);
 	}
 	write(2, GREEN, 7);
-	write(2, "OK\n", 3);
+	write(2, "OK", 3);
 	return (0);
 }

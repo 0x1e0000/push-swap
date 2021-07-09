@@ -90,15 +90,32 @@ int	*get_less_moves(t_list *a, t_list *b)
 
 void	move(int *result, t_list **a, t_list **b)
 {
+	int	size;
+	int	index;
+
 	if (result[2] == 1)
 	{
 		push(b, a, "pa");
 		return;
 	}
+	size = ft_lstsize(*b) / 2;
+	index = get_index(*b, result[0]);
 	while (result[0] != (*b)->content)
-		rotate(b, "rb");
+	{
+		if (index < size)
+			rotate(b, "rb");
+		else
+			r_rotate(b, "rrb");
+	}
+	size = ft_lstsize(*a) / 2;
+	index = get_index(*a, result[1]);
 	while (result[1] != (*a)->content)
-		rotate(a, "ra");
+	{
+		if (index < size)
+			rotate(a, "ra");
+		else
+			r_rotate(a, "rra");
+	}
 	push(b, a, "pa");
 }
 
