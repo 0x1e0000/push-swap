@@ -22,9 +22,10 @@ int	get_middle(t_list *stack, int lenght)
 	t_list	*tmp;
 	t_list	*tmp2;
 	int		i;
+	int		middle_index;
 
 	tmp = stack;
-	int middle_index = lenght / 2;
+	middle_index = lenght / 2;
 	while (tmp)
 	{
 		i = 0;
@@ -64,7 +65,7 @@ int	get_closest_number(t_list *stack, int nbr)
 	is_found = 0;
 	while (stack)
 	{
-		if (!is_found && stack->content > nbr) // Will execute once
+		if (!is_found && stack->content > nbr)
 		{
 			div = stack->content - nbr;
 			result = stack->content;

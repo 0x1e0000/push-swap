@@ -107,7 +107,7 @@ void	move(int *result, t_list **a, t_list **b)
 
 void	big_sort(t_list **a, t_list **b, int argc)
 {
-	int min;
+	int	min;
 
 	min = split_stack(a, b, argc);
 	while (*b)

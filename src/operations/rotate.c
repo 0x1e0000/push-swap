@@ -2,12 +2,12 @@
 
 void	rotate(t_list **stack, char *print)
 {
-	t_list *tmp;
-	t_list *head;
+	t_list	*tmp;
+	t_list	*head;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	head = (*stack)->next; // seconde node is the head
+	head = (*stack)->next;
 	tmp = *stack;
 	ft_lstlast(tmp)->next = *stack;
 	(*stack)->next = NULL;

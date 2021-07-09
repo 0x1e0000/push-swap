@@ -2,8 +2,8 @@
 
 void	r_rotate(t_list **stack, char *print)
 {
-	t_list *tmp;
-	t_list *head;
+	t_list	*tmp;
+	t_list	*head;
 
 	if (!*stack || !(*stack)->next)
 		return ;

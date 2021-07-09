@@ -33,13 +33,4 @@ int		get_middle(t_list *stack, int lenght);
 int		get_index(t_list *a, int nbr);
 int		get_closest_number(t_list *stack, int nbr);
 
-// Tmp
-# include <stdio.h>
-# define GREEN "\e[1;32m"
-# define RED "\e[0;31m"
-# define WHT "\e[0;37m"
-# define YEL "\e[1;33m"
-# define BLU "\e[1;34m"
-void	visualize(t_list *a, t_list *b);
-
 #endif
