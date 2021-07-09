@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/06 09:34:25 by mait-si-          #+#    #+#             */
-/*   Updated: 2021/07/09 19:29:53 by 0x10000          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../push_swap.h"
 
 int	is_sorted(t_list *stack)
@@ -69,9 +57,9 @@ int	get_index(t_list *a, int nbr)
 
 int	get_closest_number(t_list *stack, int nbr)
 {
-	int		result;
-	int		div;
-	int		is_found;
+	int	result;
+	int	div;
+	int	is_found;
 
 	is_found = 0;
 	while (stack)
