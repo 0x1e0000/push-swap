@@ -6,7 +6,7 @@
 /*   By: 0x10000 <0x10000@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 23:55:39 by 0x10000           #+#    #+#             */
-/*   Updated: 2021/07/09 00:29:31 by 0x10000          ###   ########.fr       */
+/*   Updated: 2021/07/09 20:40:22 by 0x10000          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ int main(int argc, char *argv[])
 	b = NULL;
 	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
-	// if (is_sorted(a))
-	// 	return (0);
-	// Sort Algorithm HERE
+	if (is_sorted(a))
+		return (0);
 	if (--argc == 2)
 		swap(&a, "sa");
 	else if (argc == 3)
@@ -34,6 +33,6 @@ int main(int argc, char *argv[])
 		sort_5(&a, &b, argc);
 	else if (argc <= 500)
 		big_sort(&a, &b, --argc);
-	visualize(a, b);
+	// visualize(a, b);
 	return (0);
 }
