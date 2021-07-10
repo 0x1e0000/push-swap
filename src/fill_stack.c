@@ -1,5 +1,15 @@
 #include "../push_swap.h"
 
+void	free_stack(t_list **stack)
+{
+	while (*stack)
+	{
+		free(*stack);
+		*stack = (*stack)->next;
+	}
+	free(*stack);
+}
+
 static int	check_number(char *argv[], char *nbr, int i)
 {
 	int			is_number;

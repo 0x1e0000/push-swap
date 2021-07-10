@@ -1,5 +1,11 @@
 #include "push_swap.h"
 
+static int	quit(t_list **list, int ret)
+{
+	free_stack(list);
+	return (ret);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_list	*a;
@@ -11,7 +17,7 @@ int	main(int argc, char *argv[])
 	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
 	if (is_sorted(a))
-		return (0);
+		return (quit(&a, 0));
 	while (get_next_line(0, &instruction))
 	{
 		execute_instruction(instruction, &a, &b);
@@ -20,11 +26,9 @@ int	main(int argc, char *argv[])
 	free(instruction);
 	if (!is_sorted(a))
 	{
-		write(2, RED, 7);
 		write(2, "KO\n", 3);
-		return (1);
+		return (quit(&a, 1));
 	}
-	write(2, GREEN, 7);
 	write(2, "OK\n", 3);
-	return (0);
+	return (quit(&a, 0));
 }

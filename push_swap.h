@@ -32,5 +32,6 @@ int		get_max(t_list *stack);
 int		get_middle(t_list *stack, int lenght);
 int		get_index(t_list *a, int nbr);
 int		get_closest_number(t_list *stack, int nbr);
+void	free_stack(t_list **stack);
 
 #endif

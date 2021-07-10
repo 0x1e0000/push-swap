@@ -4,7 +4,13 @@ src =	src/operations/push.c			\
 		src/operations/reverse_rotate.c	\
 		src/operations/rotate.c			\
 		src/operations/swap.c			\
-		src/*.c
+		src/exclude_min_max.c			\
+		src/execute_instruction.c		\
+		src/fill_stack.c				\
+		src/get_next_line.c				\
+		src/sort_big_stack.c			\
+		src/sort_small_stack.c			\
+		src/utils.c
 headers = -Ilibft/libft.h
 libs = libft/libft.a
 

@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-int	split_stack(t_list **a, t_list **b, int argc)
+static int	split_stack(t_list **a, t_list **b, int argc)
 {
 	int	min;
 	int	max;
@@ -26,7 +26,7 @@ int	split_stack(t_list **a, t_list **b, int argc)
 	return (min);
 }
 
-int	get_moves(t_list *stack, int nbr)
+static int	get_moves(t_list *stack, int nbr)
 {
 	int		index;
 	int		size;
@@ -48,7 +48,7 @@ int	get_moves(t_list *stack, int nbr)
 	return (0);
 }
 
-int	*get_less_moves(t_list *a, t_list *b)
+static int	*get_less_moves(t_list *a, t_list *b)
 {
 	static int	result[3];
 	t_list		*tmp;
@@ -76,7 +76,7 @@ int	*get_less_moves(t_list *a, t_list *b)
 	return (result);
 }
 
-void	move(int *result, t_list **a, t_list **b)
+static void	move(int *result, t_list **a, t_list **b)
 {
 	int	size;
 	int	index;

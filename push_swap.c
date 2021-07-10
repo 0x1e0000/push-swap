@@ -1,5 +1,11 @@
 #include "push_swap.h"
 
+static int	quit(t_list **list)
+{
+	free_stack(list);
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_list	*a;
@@ -10,7 +16,7 @@ int	main(int argc, char *argv[])
 	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
 	if (is_sorted(a))
-		return (0);
+		return (quit(&a));
 	if (--argc == 2)
 		swap(&a, "sa");
 	else if (argc == 3)
@@ -21,5 +27,6 @@ int	main(int argc, char *argv[])
 		sort_5(&a, &b, argc);
 	else if (argc <= 500)
 		big_sort(&a, &b, --argc);
-	return (0);
+	return (quit(&a));
 }
+
