@@ -29,4 +29,3 @@ int	main(int argc, char *argv[])
 		big_sort(&a, &b, --argc);
 	return (quit(&a));
 }
-

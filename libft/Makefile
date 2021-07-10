@@ -22,12 +22,12 @@ OBJS		=		$(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	@gcc -Wall -Wextra -Werror -c -g $(SRCS)
+	@gcc -Wall -Wextra -Werror -c $(SRCS)
 	@ar -rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
 bonus: $(NAME)
-	@gcc -Wall -Wextra -Werror -c -g $(BSRCS)
+	@gcc -Wall -Wextra -Werror -c $(BSRCS)
 	@ar -rs $(NAME) $(BOBJS)
 
 clean:
