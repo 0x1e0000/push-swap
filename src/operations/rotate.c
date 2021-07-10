@@ -24,5 +24,5 @@ void	rr(t_list **stack_a, t_list **stack_b, char *print)
 	rotate(stack_a, NULL);
 	rotate(stack_b, NULL);
 	if (print)
-		ft_putstr("ra\nrb\n");
+		ft_putstr("rr\n");
 }

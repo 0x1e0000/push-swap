@@ -21,5 +21,5 @@ void	ss(t_list **stack_a, t_list **stack_b, char *print)
 	swap(stack_a, NULL);
 	swap(stack_b, NULL);
 	if (print)
-		ft_putstr("sa\nsb\n");
+		ft_putstr("ss\n");
 }

@@ -76,33 +76,25 @@ static int	*get_less_moves(t_list *a, t_list *b)
 	return (result);
 }
 
-static void	move(int *result, t_list **a, t_list **b)
+static void	rotate_stacks(int *result, t_list **a, t_list **b)
 {
-	int	size;
-	int	index;
+	int	size[2];
+	int	index[2];
 
 	if (result[2] != 1)
 	{
-		size = ft_lstsize(*b) / 2;
-		index = get_index(*b, result[0]);
+		size[0] = ft_lstsize(*b) / 2;
+		index[0] = get_index(*b, result[0]);
+		size[1] = ft_lstsize(*a) / 2;
+		index[1] = get_index(*a, result[1]);
+		while (result[0] != (*b)->content && result[1] != (*a)->content)
+			if (check_double_rotate(a, b, size, index))
+				break ;
 		while (result[0] != (*b)->content)
-		{
-			if (index < size)
-				rotate(b, "rb");
-			else
-				r_rotate(b, "rrb");
-		}
-		size = ft_lstsize(*a) / 2;
-		index = get_index(*a, result[1]);
+			check_rotate_b(index[0], size[0], b);
 		while (result[1] != (*a)->content)
-		{
-			if (index < size)
-				rotate(a, "ra");
-			else
-				r_rotate(a, "rra");
-		}
+			check_rotate_a(index[1], size[1], a);
 	}
-	push(b, a, "pa");
 }
 
 void	big_sort(t_list **a, t_list **b, int argc)
@@ -111,7 +103,10 @@ void	big_sort(t_list **a, t_list **b, int argc)
 
 	min = split_stack(a, b, argc);
 	while (*b)
-		move(get_less_moves(*a, *b), a, b);
+	{
+		rotate_stacks(get_less_moves(*a, *b), a, b);
+		push(b, a, "pa");
+	}
 	while (*a)
 	{
 		if (min == (*a)->content)

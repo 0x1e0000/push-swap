@@ -33,5 +33,8 @@ int		get_middle(t_list *stack, int lenght);
 int		get_index(t_list *a, int nbr);
 int		get_closest_number(t_list *stack, int nbr);
 void	free_stack(t_list **stack);
+int		check_double_rotate(t_list **a, t_list **b, int *size, int *index);
+void	check_rotate_a(int index, int size, t_list **a);
+void	check_rotate_b(int index, int size, t_list **b);
 
 #endif

@@ -16,8 +16,6 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc > 1 && argv && !fill_stack(argv, &a))
 		return (0);
-	if (is_sorted(a))
-		return (quit(&a, 0));
 	while (get_next_line(0, &instruction))
 	{
 		execute_instruction(instruction, &a, &b);

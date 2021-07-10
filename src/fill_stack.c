@@ -24,13 +24,8 @@ static int	check_number(char *argv[], char *nbr, int i)
 		error_();
 	j = 1;
 	while (j != i)
-	{
 		if (number == ft_atoi(argv[j++], 0))
-		{
-			write(2, "Duplicated Number\n", 18);
-			exit(1);
-		}
-	}
+			error_();
 	return ((int)number);
 }
 
