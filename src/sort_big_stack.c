@@ -1,10 +1,10 @@
 #include "../push_swap.h"
 
-static int	split_stack(t_list **a, t_list **b, int argc)
+static int split_stack(t_list **a, t_list **b, int argc)
 {
-	int	min;
-	int	max;
-	int	middle;
+	int min;
+	int max;
+	int middle;
 
 	min = get_min(*a);
 	max = get_max(*a);
@@ -12,25 +12,28 @@ static int	split_stack(t_list **a, t_list **b, int argc)
 	argc++;
 	while (argc--)
 	{
+		// Push values from Stack A to B except for min, and max values.
 		if ((*a)->content == min || (*a)->content == max)
 			rotate(a, "ra");
 		else
 		{
 			push(a, b, "pb");
+			// if the current value less than the middle value, we will rotate Stack B to keep the Stack Splited with middle value
 			if ((*b)->content < middle)
 				rotate(b, "rb");
 		}
 	}
+	// Stack A. will be swapper if the min value is above (so we will have Stack A with 2 Values => [max, min])
 	if ((*a)->next && (*a)->content < (*a)->next->content)
 		swap(a, "sa");
 	return (min);
 }
 
-static int	get_moves(t_list *stack, int nbr)
+static int get_moves(t_list *stack, int nbr)
 {
-	int		index;
-	int		size;
-	t_list	*head;
+	int index;
+	int size;
+	t_list *head;
 
 	head = stack;
 	size = ft_lstsize(stack);
@@ -48,12 +51,12 @@ static int	get_moves(t_list *stack, int nbr)
 	return (0);
 }
 
-static int	*get_less_moves(t_list *a, t_list *b)
+static int *get_less_moves(t_list *a, t_list *b)
 {
-	static int	result[3];
-	t_list		*tmp;
-	int			sum;
-	int			tmp2[2];
+	static int result[3];
+	t_list *tmp;
+	int sum;
+	int tmp2[2];
 
 	tmp = b;
 	result[0] = tmp->content;
@@ -76,10 +79,10 @@ static int	*get_less_moves(t_list *a, t_list *b)
 	return (result);
 }
 
-static void	rotate_stacks(int *result, t_list **a, t_list **b)
+static void rotate_stacks(int *result, t_list **a, t_list **b)
 {
-	int	size[2];
-	int	index[2];
+	int size[2];
+	int index[2];
 
 	if (result[2] != 1)
 	{
@@ -89,7 +92,7 @@ static void	rotate_stacks(int *result, t_list **a, t_list **b)
 		index[1] = get_index(*a, result[1]);
 		while (result[0] != (*b)->content && result[1] != (*a)->content)
 			if (check_double_rotate(a, b, size, index))
-				break ;
+				break;
 		while (result[0] != (*b)->content)
 			check_rotate_b(index[0], size[0], b);
 		while (result[1] != (*a)->content)
@@ -97,10 +100,13 @@ static void	rotate_stacks(int *result, t_list **a, t_list **b)
 	}
 }
 
-void	big_sort(t_list **a, t_list **b, int argc)
+void big_sort(t_list **a, t_list **b, int argc)
 {
-	int	min;
+	int min;
 
+	// Push all A elements to B except min, max number.
+	// Stack B will have. first half with numbers grater than the middle.
+	// and the other half for the smallest numbers (no need to be sorted)
 	min = split_stack(a, b, argc);
 	while (*b)
 	{
@@ -110,7 +116,7 @@ void	big_sort(t_list **a, t_list **b, int argc)
 	while (*a)
 	{
 		if (min == (*a)->content)
-			break ;
+			break;
 		r_rotate(a, "rra");
 	}
 }
